@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+<link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+{% block 'jumbotron' %}
+
+<header>
+  <div class="container">
+      {% include 'navbar.html' %}
+    </div>
+  </div>
+</header>
+<style>
+
+   body {
+         
+       background-image: url('{% static "img/logbg.jpg"%}');
+}
+.co{
+   
+   margin-left:40%;
+}
+    </style>
+
+<div class =" col-md-6 col-md-offset-3 co">
+  <h2 class="slide-title col-md-12">REGISTER</h2>
+    <table class="col-md-6 col-md-offset-3">
+      {% for field in form %}
+      <div class="fieldWrapper">
+	       <tr><td>{{ field.errors }}</td></tr>
+
+         <tr><td>{{ field.label_tag }}</td><td>{{ field }}</td></tr>
+      </div>
+
+{% endfor %}
+    <tr><td><input class="btn btn-lg btn-primary" type="submit" value="{% trans 'Submit' %}" /></td></tr>
+  </table>
+</div>
+{% endblock %}
+
+
+{% comment %}
+
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+
+{% endcomment %}

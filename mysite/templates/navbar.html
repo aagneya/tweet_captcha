@@ -1,0 +1,36 @@
+<div class="span9">
+
+  <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/about/">About</a></li>
+                 {% if request.user.is_authenticated %}
+                 <li><a  href="/last_search/">LAST SEARCH</a></li>
+                 <li><a  href="{% url 'auth_logout' %}">LOGOUT &raquo;</a></li>
+                  {% else %}
+                  <li><a  href="{% url 'auth_login' %}">LOGIN &raquo;</a></li>
+                  <li><a  href="{% url 'registration_register' %}">REGISTER &raquo;</a></li>
+                {% endif %}
+
+              </ul>
+            </div>
+        </div>
+      </dilv>
+
+
+
+
+
+              </ul>
+            </div>
+        </div>
+      </div>
+
+</div>

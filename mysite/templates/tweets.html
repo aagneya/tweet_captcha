@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block 'jumbotron' %}
+
+<header>
+
+  <!--start: Container -->
+  <div class="container">
+
+
+
+      <!--start: Navigation -->
+      {% include 'navbar.html' %}
+      <!--end: Navigation -->
+
+    </div>
+    <!--end: Row -->
+
+  </div>
+  <!--end: Container-->
+
+</header>
+
+<style>
+
+  body {
+         
+       background-image: url('{% static "img/res.jpg"%}');
+        background-size: 150px 180px;
+       
+}
+.tweets{
+   
+   
+   z-index:100;
+   position:absolute;
+   top:90px;
+   left:100px;
+}
+
+    </style>
+
+   
+    
+              
+
+            <div class = "tweets">
+                       <h1> LASTEST TWEETS </h1>
+            {% for tweet in tweets %}
+            <div class="post">
+                <h3 style="color:white;" ><b>@ tweeted: {{ tweet }}</b></h3>
+            </div>
+                
+            {%endfor%}
+            <h1><a href="/">INDEX</a></h1>
+       </div>
+{% endblock %}

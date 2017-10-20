@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} <!-- New line -->
+
+{% block 'jumbotron' %}
+<header>
+
+  <!--start: Container -->
+  <div class="container">
+
+
+
+      <!--start: Navigation -->
+      {% include 'navbar.html' %}
+      <!--end: Navigation -->
+
+    </div>
+    <!--end: Row -->
+
+  </div>
+  <!--end: Container-->
+
+</header>
+
+
+
+
+ {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="{% url 'detail' pk=post.pk %}">{{ post.first }}</a></h1>
+
+    </div>
+{% endfor %}
+
+<li><a class="btn btn-lg btn-primary" href="/" role="button">HOME</a></li>
+
+{% endblock %}

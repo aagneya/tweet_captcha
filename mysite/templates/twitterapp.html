@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block 'jumbotron' %}
+<header>
+
+  <!--start: Container -->
+  <div class="container">
+
+
+
+      <!--start: Navigation -->
+      {% include 'navbar.html' %}
+      <!--end: Navigation -->
+
+    </div>
+    <!--end: Row -->
+
+  </div>
+  <!--end: Container-->
+
+</header>
+
+<style>
+
+  body {
+         
+       background-image: url('{% static "img/twt.jpeg"%}');
+       
+}
+.twtr{
+   
+   
+   z-index:100;
+   position:absolute;
+   top:90px;
+   left:100px;
+}
+.co{
+   
+   
+   z-index:100;
+   position:absolute;
+   top:300px;
+   left:500px;
+}
+
+    </style>
+
+<div class="co">
+  <h1 style="color:white">Twitter HOME</h1>
+  <p>The form below contains two input elements; one of type text and one of type password:</p>
+  <form action="/tweets/" class="form-horizontal" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label style="color:white" for="usr"><b>ENTER THE NAME TO VIEW :</label>
+      <input type="text" class="form-control" id="usr" name="screen_name">
+    </div>
+    <div class="form-group">
+      <label style="color:white" for="pwd">ENTER THE COUNT:</label>
+      <input type="number" name="count">
+    </div>
+    <tr><td><button type="submit" class="btn btn-lg btn-primary" value="Submit">Submit</button></td></tr>
+  </form>
+</div>
+ 
+   
+
+{% endblock %}
+
+
+
+
+   
+

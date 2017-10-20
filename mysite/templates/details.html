@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+
+
+
+            <div class="post">
+                <p>NAME {{ posts.first }} </p>
+                <p>LAST {{ posts.last }} </p>
+                <p>NAME {{ posts.email }} </p>
+            </div>
+
+
+            <h1><a href="/">INDEX</a></h1>
+  </body>
+</html>
+
+
+
+													{% if request.user.is_authenticated %}
+								            <li><a  href="/last_search/">LAST SEARCH</a></li>
+								            <li><a  href="{% url 'auth_logout' %}">LOGOUT &raquo;</a></li>
+
+								            Hiii {{ user }}
+								            {% else %}
+
+								           <li> <a  href="{% url 'auth_login' %}">LOGIN &raquo;</a></li>
+								            <li><a  href="{% url 'registration_register' %}">REGISTER &raquo;</a></li>
+														{% endif %}
